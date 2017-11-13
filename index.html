@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>GENO CV</title>
+	<link rel = "stylesheet" href = "css/style.css">
+	<script src = 'js/jsPdf/html2canvas.min.js'></script>
+	<script src = 'js/jsPdf/jspdf.debug.js'></script>
+
+	<script src = 'js/tools.js'></script>
+	<script src = 'templates/templates.js'></script>
+	<script src = 'js/script.js'></script>
+</head>
+<body>
+	<header id = "header">
+		<h2><a href="index.html" id = "icon">Your <span>CV</span> maker</a></h2>
+	</header>
+	
+	<script>getUserDimensions()</script>
+	<div id="bl1"class = "left block" style = "border:none">
+		<div id = "menu" class = "container">
+			<span>Change template</span>
+			<button id = "prev" class = "active_and_disabled" onclick = "prev()" disabled>Prev</button>
+			<button id = "next" onclick = "next()">Next</button>
+			<button id = "newtab" onclick = "openNew()">Open in new window</button>
+			<button id = "down_pdf" onclick = "makePDF()">Download PDF</button>
+		</div>	
+		<div id = "categories">
+			<div id = "personal" class = "container">
+				<h3 onclick = "toggle('personal')">Personal Info</h3>
+				<div id = "personal_box">
+					<input id = "main_image" type = "file" name="imageFile" accept="image/*">
+					<div id = "image_box" class = "left" onclick = "fileOpen()">
+						Click to open image
+					</div>
+					<div id = "name_box">
+						<input  type = "text" id = "name" placeholder = "Name" maxlength="24" oninput = "dataChange(id)">
+						<br>
+						<input type = "text" id = "lastName" placeholder = "Last Name" maxlength="24" oninput = "dataChange(id)">
+						<br>
+						<input type = "date" id = "birthDate" placeholder = "Birth Date" oninput = "dataChange(id)">
+					</div>
+				</div>
+			</div>
+
+			<div id = "coverletter" class="container">
+				<h3 onclick = "toggle('coverletter')">Cover Letter</h3>	
+				<textarea id = "covletter" rows="2" cols="30" placeholder="Describe yourself here..." oninput = "dataChange(id)"></textarea>
+			</div>
+			
+			<div id = "experiences" class="container">
+				<h3 onclick = "toggle('experiences')">Experiences</h3>	
+				<button id = "add_exp" onclick = "addExp()">Add Experience</button><br>
+				<div id = "exp_content"></div>
+			</div>
+
+			<div id = "contact" class = "container">
+				<h3 onclick = "toggle('contact')">Contacts</h3>
+				<div class = "icon">
+					<span class = "helper"></span>
+					<img src = "img/phone.png" alt = "Phone">
+					<input type = "text" id = "phone" placeholder = "Phone" maxlength="15" oninput = "dataChange(id)">
+				</div><br>
+				<div class = "icon">
+						<span class = "helper"></span>
+						<img src = "img/address.png" alt = "Address">
+						<input type = "text" id = "address" placeholder = "Address" maxlength="15" oninput = "dataChange(id)">
+					</div><br>
+				<div class = "icon">
+					<span class = "helper"></span>
+					<img src = "img/mail.png" alt = "Email">
+					<input type = "text" id = "email" placeholder = "Email" maxlength="15" oninput = "dataChange(id)">
+				</div><br>
+				<div class = "icon">
+					<span class = "helper"></span>
+					<img src = "img/fbook.png" alt = "Facebook">
+					<input type = "text" id = "fbook" placeholder = "Facebook" maxlength="15" oninput = "dataChange(id)">
+				</div><br>
+				<div class = "icon">
+					<span class = "helper"></span>
+					<img src = "img/skype.png" alt = "Skype">
+					<input type = "text" id = "skype" placeholder = "Skype" maxlength="15" oninput = "dataChange(id)">
+				</div>
+			</div>
+
+			<div id = "skills" class = "container">
+				<h3 onclick = "toggle('skills')">Skills</h3>	
+				<button id = "add_skill" onclick = "addSkill()">Add skill</button><br>
+				<div id = "skills_content"></div>
+			</div>
+
+			<div id = "education" class="container">
+				<h3 onclick = "toggle('education')">Education</h3>	
+				<button id = "add_edu" onclick = "addEdu()">Add Education</button><br>
+				<div id = "edu_content"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class = "right block" id = "iframe_block">
+		<div id = "movable_block"></div>
+		<iframe id = "iframe"></iframe>
+		<div id = "toolscontainer">
+			<div id = "toolbar">
+				<button id = "cursor" class = "hover active_and_disabled" onclick = "cursor()" disabled></button>
+				<button id = "move" class = "hover" onclick = "move()"></button>
+				<button id = "minus" class = "hover" onclick = "zoomOut()"></button>
+				<button id = "percent" disabled>100%</button>
+				<button id = "plus" class = "hover" onclick = "zoomIn()"></button>
+			</div>
+		</div>
+	</div>
+	<script>constructBlocks()</script>
+</body>
+</html>

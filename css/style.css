@@ -1,0 +1,351 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #DEDEDE;
+}
+
+#header {
+    display: block;
+    width: 100%;
+    height: 40px;
+    background-color: #4A4A4A;
+}
+
+#header h2 {
+    margin: 0;
+    color: #FFF;
+    line-height: 40px;
+    margin-left: 50px;
+}
+
+.block {
+    border: 1px solid #9D9D9D;
+    margin: 0;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+#iframe {
+    border: none;
+    position: absolute;
+}
+
+#iframe_block {
+    position: relative;
+    overflow: hidden;
+    background-color: #C1C1C1;
+}
+
+#movable_block {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    /*opacity: 0.2;*/
+    overflow: hidden;
+}
+
+
+/***  Toolbar buttons section  ***/
+
+#toolscontainer {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    height: 25px;
+    z-index: 3;
+    bottom: 0;
+    margin-bottom: 2px;
+}
+
+#toolbar {
+    background-color:rgba(125, 125, 125, 0.16);
+    display: inline-block;
+    position: relative;
+    width: 187px;
+    height: 25px;
+}
+
+#minus, #plus, #move, #cursor {
+    position: absolute;
+    width: 25px;
+    height: 100%;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+.hover:hover {
+    opacity: 0.5;
+}
+
+.active_and_disabled {
+    opacity: 0.5;
+    cursor: default !important;
+}
+
+#percent {
+    background: transparent;
+    position: absolute;
+    text-align: center;
+    width: 40px;
+    height: 100%;
+    border: none;
+    outline: none;
+    left: 108px;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#cursor {
+    background: url('../img/cursor.png') no-repeat;
+    background-size: 100%;
+    left: 4px;
+}
+
+#move {
+    background: url('../img/move.png') no-repeat;
+    background-size: 100%;
+    left: 38px;
+}
+
+#minus {
+    background: url('../img/minus.png') no-repeat;
+    background-size: 100%;
+    left: 74px;
+}
+
+#plus {
+    background: url('../img/plus.png') no-repeat;
+    background-size: 100%;
+    left: 153px;
+}
+
+#dpi {
+    height: 1cm;
+    left: -100%;
+    position: absolute;
+    top: -100%;
+    width: 1cm;
+  }
+
+
+/***  FIRST BLOCK ***/
+.container {
+    background-color: #FFF;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#personal_box {
+    display: inline-block;
+    margin-top: 4px;
+}
+
+.container input {
+    width: 140px;
+    height: 28px;
+    border: 1px solid #ccc;
+    outline-color: #949494;
+    border-radius: 3px;
+    padding-left: 8px;
+}
+
+.container h3 {
+    margin: 0;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+    text-align: left;
+    cursor: pointer;
+}
+
+.container h3:hover {
+    opacity: 0.9;
+    text-shadow: 1px 1px #DDD;
+}
+
+.container button {
+    background-color: #444444;
+    color: #FFF;
+    height: 30px;
+    padding: 0px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+}
+
+.container button:hover:not(.active_and_disabled) {
+    opacity: 0.9;
+    transition: 60ms;
+}
+
+/*******   CATEGORIES  ********/
+
+#personal, #contact, #skills, #experiences, #education, #coverletter {
+    width: 300px;
+    height: 20px;
+    padding: 10px;
+    margin: 0px 20px;
+    margin-bottom: 2px;
+    color: #2E2F31;
+    overflow: hidden;
+    transition: 1000ms;
+}
+
+#personal {
+    height: 150px;
+    margin-bottom: 10px;
+}
+
+#personal input {
+    margin: 4px;
+    margin-top: 0px;
+}
+
+#main_image {
+    display: none;
+}
+
+#image_box {
+    width: 100px;
+    height: 100px;
+    border-radius: 4px;
+    border: 2px solid #C7CDCF; 
+    background-color: #D1D8DB;
+    cursor: pointer;
+    color:#9CA8AF;
+    font-size: 12px;
+    text-align: center;
+    line-height: 100px;
+    display: inline-block;
+}
+
+#image_box:hover {
+    color: #6F7B82;
+}
+
+#name_box {
+    display: inline-block;
+    margin-left: 5px;
+    text-align: left;
+}
+
+#male, #female {
+    width: 25px;
+    height: 25px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+#male {
+    background: url('../img/male.png') no-repeat;
+    background-size: 100%;
+}
+
+#female {
+    background: url('../img/female.png') no-repeat;
+    background-size: 100% 100%;
+}
+
+#male:hover, #female:hover {
+    opacity: 0.6;
+}
+
+.icon {
+    display: inline-block;
+    height: 29px;
+    text-align: right;
+    margin: 4px;
+}
+
+.icon img{
+    max-width: 25px;
+    vertical-align: middle;
+    margin-top: -2px;
+}
+
+.helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin: 0;
+}
+
+#rating {
+    border: 1px solid black;
+    width: 100px;
+    height: 100px;
+}
+
+#skills_content {
+    height: 185px;
+    overflow: auto;
+    margin-top: 8px;
+}
+
+#exp_content, #edu_content {
+    height: 185px;
+    overflow: auto;
+    margin-top: 8px;
+}
+
+#exp_content .small_input, #edu_content .small_input {
+    width: 70px;
+}
+
+#exp_content .md_input, #edu_content .md_input {
+    width: 108px;
+}
+
+
+#categories {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+#menu {
+    display: inline-block;
+    width: 550px;
+    height: 40px;
+    padding-top: 10px;
+}
+
+#menu span {
+    font-size: 18px;
+}
+
+#coverletter textarea{
+    width: 95%;
+    height: 80%;
+    outline: none;
+}
+
+#icon {
+    text-decoration: none;
+    color: #FFF;
+}
+
+#icon:hover {
+    opacity: 0.8;
+}
+
+#icon span {
+    background-color: #C71C19;
+    padding: 2px;
+    border-radius: 4px;
+}
